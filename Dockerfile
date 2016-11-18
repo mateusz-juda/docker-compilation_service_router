@@ -20,7 +20,9 @@ ENV PATH_ORG="$PATH" \
     DISTCC_SKIP_LOCAL_RETRY=1 \
     DISTCC_FALLBACK=0 \
     DISTCC_BACKOFF_PERIOD=0 \
-    DISTCC_HOSTS=""
+    DISTCC_HOSTS="" \
+    ALLOW="0.0.0.0/32" \
+    DISTCCD_OPTS=""
 
 WORKDIR /workdir
 ENTRYPOINT ["/usr/local/scripts/start.sh"]

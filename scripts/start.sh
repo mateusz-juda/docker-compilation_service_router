@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mkdir -p /workdir /workdir/distcc /workdir/ccache /workdir/tmp
-chown -R distccd:nogroup /workdir/*
+chown -R nobody /workdir/*
 
 export PATH="$PATH_DISTCC"
-exec distccd  --no-detach --log-stderr --daemon $@
+exec distccd  --no-detach --log-stderr --daemon --user nobody --allow "$ALLOW" "$DISTCCD_OPTS"

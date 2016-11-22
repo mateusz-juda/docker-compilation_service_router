@@ -4,9 +4,6 @@ MAINTAINER Mateusz Juda <mateusz.juda@gmail.com>
 RUN dnf -y update && dnf -y install ccache distcc distcc-server && dnf clean all
 
 
-# distccd port
-EXPOSE 3632
-
 COPY scripts /usr/local/scripts
 
 ENV PATH_ORG="$PATH" \
@@ -22,6 +19,8 @@ ENV PATH_ORG="$PATH" \
     DISTCC_BACKOFF_PERIOD=0 \
     DISTCC_HOSTS="" \
     ALLOW="0.0.0.0/32" \
+    PORT="3632" \
+    JOBS="1" \
     DISTCCD_OPTS=""
 
 WORKDIR /workdir

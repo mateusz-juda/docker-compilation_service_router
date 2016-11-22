@@ -12,6 +12,7 @@ ENV PATH_ORG="$PATH" \
     TMPDIR="/workdir/tmp" \
     CCACHE_DIR="/workdir/ccache" \
     CCACHE_PREFIX="distcc-wrap.sh" \
+    CCACHE_MAXSIZE="5G" \
     DISTCC_DIR="/workdir/distcc" \
     DISTCC_IO_TIMEOUT=900 \
     DISTCC_SKIP_LOCAL_RETRY=1 \
